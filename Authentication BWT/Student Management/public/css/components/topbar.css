@@ -1,0 +1,104 @@
+.main-main {
+    width: 100%;
+}
+
+.main-header {
+    background-color: white;
+    padding: 10px 30px;
+    display: flex;
+    border-radius: 0;
+    margin-bottom: 0;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+    align-items: center;
+}
+
+.main-search {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    background-color: var(--background);
+}
+
+.main-search input {
+    width: 250px;
+    height: 35px;
+    outline: none;
+    background-color: var(--light-bg);
+    border: none;
+    color: var(--light-text);
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 40px;
+    border-radius: 0;
+}
+
+.main-search i {
+    position: relative;
+    top: 7px;
+    width: 0;
+    left: 10px;
+    cursor: pointer;
+    color: var(--light-text);
+    font-size: 20px;
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.user-info span {
+    width: max-content !important;
+}
+
+.user-info .user-username {
+    font-size: 16px;
+}
+
+.user-info .user-role {
+    font-size: 12px; 
+    margin-top: -5px;
+    color: var(--light-text);
+}
+
+.user-avatar {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+} 
+
+.main-main section {
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+.main-main section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.main-main section .header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+@media (max-width: 572px) {
+    .main-search input {
+        width: 70%;
+    }
+}

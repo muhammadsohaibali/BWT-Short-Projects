@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="/css/all-students.css" />
+
+    <link rel="stylesheet" href="/css/components/sidebar.css" />
+    <link rel="stylesheet" href="/css/components/topbar.css" />
+
+    <title>All Students - BaitusSalam TeckPark</title>
+</head>
+
+<body>
+    <div class="main-container-div">
+        <aside class="sidebar-sidebar">
+            <div class="sidebar-logo">
+                <img class="img-default" src="/imgs/btp-logo.png" alt="Tech Park Logo">
+                <img class="img-min" src="/imgs/baitussalam-logo-min.svg" alt="Tech Park Logo">
+                <div class="sidebar-div-logout" id="logout-btn-1">
+                    <i class='bxr bx-arrow-in-left-square-half'></i>
+                    <span>Logout</span>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li id="goto-dashboard">
+                    <i class='bx bx-chalkboard'></i>
+                    <span>Dashboard</span>
+                </li>
+                <li id="my-profile">
+                    <i class='bx bx-user'></i>
+                    <span>Profile</span>
+                </li>
+                <li id="all-students" class="sidebar-active">
+                    <i class='bx bxs-group'></i>
+                    <span>All Students</span>
+                </li>
+                <li>
+                    <i class='bx bx-book-alt'></i>
+                    <span>Courses</span>
+                </li>
+                <li>
+                    <i class='bx bx-check-square'></i>
+                    <span>Attendance</span>
+                </li>
+                <li>
+                    <i class='bx bx-edit'></i>
+                    <span>Exam</span>
+                </li>
+            </ul>
+            <div class="sidebar-div-logout" id="logout-btn-2">
+                <i class='bxr bx-arrow-in-left-square-half'></i>
+                <span>Logout</span>
+            </div>
+        </aside>
+
+        <main class="main-main">
+            <header class="main-header">
+                <div class="main-search">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search" id="querry-inp">
+                </div>
+                <div class="user-info-container">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User" class="user-avatar" />
+                    <div class="user-info">
+                        <span class="user-username">John Doe</span>
+                        <span class="user-role">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="main-content">
+                <div class="header">
+                    <h2>All Students</h2>
+                    <button class="add-btn">
+                        <i class='bx bx-plus'></i> Add Student
+                    </button>
+                </div>
+
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" /></th>
+                            <th>Student Name</th>
+                            <th>Roll</th>
+                            <th>Address</th>
+                            <th>Room</th>
+                            <th>Date of Birth</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" /></td>
+                            <td>Sohaib Ali</td>
+                            <td>#101</td>
+                            <td>House NO:23/b street 2 dha ph2</td>
+                            <td>07</td>
+                            <td>03/04/2004</td>
+                            <td>3312728509</td>
+                            <td class="action-buttons">
+                                <button class="btn update-btn">
+                                    <i class='bx bx-edit'></i> Update
+                                </button>
+                                <button class="btn delete-btn">
+                                    <i class='bx bx-trash'></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Babar Ali</td>
+                            <td>#101</td>
+                            <td>Karachi</td>
+                            <td>03</td>
+                            <td>03/3/2001</td>
+                            <td>03312728509</td>
+                            <td class="action-buttons">
+                                <button class="btn update-btn">
+                                    <i class='bx bx-edit'></i> Update
+                                </button>
+                                <button class="btn delete-btn">
+                                    <i class='bx bx-trash'></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Muhammad Ali</td>
+                            <td>#102</td>
+                            <td>Karachi</td>
+                            <td>07</td>
+                            <td>02/4/1998</td>
+                            <td>03312728509</td>
+                            <td class="action-buttons">
+                                <button class="btn update-btn">
+                                    <i class='bx bx-edit'></i> Update
+                                </button>
+                                <button class="btn delete-btn">
+                                    <i class='bx bx-trash'></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Muhammad Nadeem</td>
+                            <td>#103</td>
+                            <td>House number 23/b malir karachi</td>
+                            <td>03</td>
+                            <td>03/3/1999</td>
+                            <td>03312728509</td>
+                            <td class="action-buttons">
+                                <button class="btn update-btn">
+                                    <i class='bx bx-edit'></i> Update
+                                </button>
+                                <button class="btn delete-btn">
+                                    <i class='bx bx-trash'></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Babar Ali</td>
+                            <td>#101</td>
+                            <td>Karachi</td>
+                            <td>03</td>
+                            <td>03/3/2001</td>
+                            <td>03312728509</td>
+                            <td class="action-buttons">
+                                <button class="btn update-btn">
+                                    <i class='bx bx-edit'></i> Update
+                                </button>
+                                <button class="btn delete-btn">
+                                    <i class='bx bx-trash'></i> Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+
+</html>

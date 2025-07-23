@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/login-forgot.css">
+    <title>login - Baitussalam TechPark</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="form-section">
+            <img src="/imgs/btp-logo.png" class="logo" alt="not">
+            <h3 class="heading-text">Welcome Back!</h3>
+            <p class="subheading-text">Please enter log in details</p>
+            <form autocomplete="off" id="login-form">
+                <div class="input-group">
+                    <label for="user">User Name</label>
+                    <input type="text" id="user" name="username" placeholder="Enter Username" autofocus>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                </div>
+                <div class="forgot-link">
+                    <a href="/forgot-password" id="forgot-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            <div class="divider-text">or continue</div>
+            <button class="google-btn">
+                <img src="/imgs/google-logo.png" alt="" class="google-icon">
+                Log In With Google
+            </button>
+        </div>
+        <div class="banner-section">
+            <img src="/imgs/banner.png" class="banner" alt="" srcset="">
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #f5f4fb;
+}
+
+i {
+    font-size: 16px;
+}
+
+.div-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 100vh;
+}
+
+.div-sidebar-left {
+    display: none !important;
+}
+
+.div-sidebar-left,
+.div-sidebar-right {
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    color: #fff;
+    user-select: none;
+    flex-direction: column;
+    background-color: #1d1c21;
+}
+
+.div-sidebar-left {
+    width: 15%;
+}
+
+.main-div-container {
+    flex: 1;
+    gap: 20px;
+}
+
+.div-main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.div-sidebar-left>div,
+.div-main>div,
+.div-sidebar-right>div {
+    margin-bottom: 15px;
+    border-radius: 0;
+}
+
+.div-logo {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.div-logo>img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    object-fit: contain;
+}
+
+.div-logo>span {
+    display: none;
+}
+
+.div-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.div-tab {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0;
+    cursor: pointer;
+    padding: 10px;
+    gap: 10px;
+}
+
+.active {
+    background-color: #03bafd;
+    transition: 0.2s;
+    color: #20283a;
+}
+
+.active:hover {
+    background-color: #00a2dd;
+    color: #090c13;
+}
+
+.div-logout {
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    cursor: pointer;
+    margin-top: auto;
+    transition: 0.2s;
+    flex-direction: row;
+}
+
+.div-logout:hover {
+    background-color: #28272c;
+}
+
+.div-tab i,
+.div-tab span,
+.div-logout i,
+.div-logout span {
+    margin: auto 0;
+}
+
+@media (max-width: 1200px) {
+    .div-sidebar-left {
+        padding: 10px;
+        width: 7%;
+    }
+
+    .div-logo {
+        padding: 3px;
+    }
+
+    .div-logo img {
+        margin: auto;
+    }
+
+    .div-logo span {
+        display: none;
+    }
+
+    .div-tab {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .div-tab span {
+        display: none;
+    }
+
+    .div-logout span {
+        display: none;
+    }
+}
+
+.div-main {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    background-color: #131217;
+}
+
+.div-search {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    background-color: var(--background);
+}
+
+.div-search input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 40px;
+    border-radius: 0;
+    background-color: #2b2a2f;
+}
+
+.div-search i {
+    position: relative;
+    top: 10px;
+    width: 0;
+    left: 10px;
+    color: #4f4e51;
+    font-size: 20px;
+}
+
+.div-new-course {
+    background: url('../imgs/shopify-banner.png');
+    background-size: cover;
+    background-position: left;
+    color: #131217;
+    display: flex;
+    margin: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    height: fit-content;
+    flex-direction: column;
+    background-color: #03b9fe;
+}
+
+.div-new-course:hover {
+    transform: translateY(-2px);
+}
+
+.div-new-course .div-welcome {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0 0 0;
+}
+
+.div-new-course .div-course-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.div-new-course .div-course-description {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.div-new-course .div-course-action-btn {
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 0;
+    transition: 0.2s;
+    background-color: #212a2f;
+}
+
+.div-new-course .div-course-action-btn:hover {
+    background-color: #39383d;
+}
+
+.div-your-courses {
+    margin: 10px;
+    display: flex;
+    color: #131217;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.section-header {
+    margin: 10px 0;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+    justify-content: space-between;
+}
+
+.section-header span {
+    font-size: 20px;
+    margin: auto 0;
+    font-weight: 500;
+}
+
+.section-header>div {
+    gap: 5px;
+    display: flex;
+}
+
+.section-header>div i {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #242329;
+}
+
+
+.section-header>div i:hover {
+    background-color: #323038;
+}
+
+.div-your-courses .your-courses-section {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.your-course {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    transition: 0.3s;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.your-course:hover {
+    transform: translateY(-2px);
+}
+
+.yellow-div {
+    background-color: #ffd169;
+}
+
+.green-div {
+    background-color: #07d7a3;
+}
+
+.your-course-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.your-course-header .course-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: auto 0;
+}
+
+.your-course-header .course-days-remaining {
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2px 5px;
+    margin: auto 0;
+    height: fit-content;
+}
+
+.your-course-header .yellow-div-child {
+    background-color: #e9b742;
+}
+
+.your-course-header .green-div-child {
+    background-color: #01bd8e;
+}
+
+.your-course-total-classes {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.your-course-duration-progress-bar {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+.your-course-duration-progress-bar>div {
+    height: 5px;
+    width: 100%;
+    margin: auto 0;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.your-course-duration-progress-bar>div div {
+    height: 100%;
+    background: #4caf50;
+}
+
+.your-course-duration-progress-bar span {
+    margin: auto 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.your-course-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.course-attendance-count {
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.course-footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-footer-right {
+    display: flex;
+}
+
+.course-attendance-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto 0;
+}
+
+.course-continue-btn {
+    margin: auto 0;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 0;
+    transition: 0.2s;
+    margin: auto 0;
+    background-color: #1c232e;
+}
+
+.course-continue-btn:hover {
+    background-color: #272f3b;
+}
+
+.div-your-resources {
+    padding: 10px;
+}
+
+.div-your-resources-section {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.div-your-resource {
+    width: 100%;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 0;
+    background-color: #2a292e;
+}
+
+.div-your-resource:hover {
+    transform: translateY(-2px);
+}
+
+.your-resource-title {
+    color: #dadada;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.your-resource-author {
+    font-style: italic;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.your-resource-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.your-resource-type {
+    background-color: #45444b;
+    padding: 0px 5px;
+    margin: auto 0;
+    font-size: 14px;
+    border-radius: 0;
+    height: fit-content;
+}
+
+.your-resource-read-watch-btn {
+    margin: auto 0;
+    color: #2a292e;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.2s;
+    border-radius: 0;
+    background-color: #e9e9eb;
+}
+
+.your-resource-read-watch-btn:hover {
+    transform: translateY(-1px);
+    background-color: #d3d3d3;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: unset;
+}

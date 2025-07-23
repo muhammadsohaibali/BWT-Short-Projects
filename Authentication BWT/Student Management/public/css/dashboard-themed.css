@@ -1,0 +1,179 @@
+:root {
+    --primary: #F65E28;
+    --background: #ffffff;
+    --highlight: #6d6d6d;
+    --accent: #000000;
+    --light-text: #777777;
+    --light-bg: #f4f4f4;
+    --border-radius: 0;
+    --font-family: 'Poppins', sans-serif;
+}
+
+button,
+span,
+div.div-course-action-btn,
+div.your-resource-type,
+div.course-attendance-text,
+div.course-continue-btn,
+div.your-resource-read-watch-btn {
+    user-select: none;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-bg);
+    color: var(--accent);
+}
+
+.div-sidebar-left,
+.div-sidebar-right {
+    background-color: var(--background);
+    color: var(--accent);
+}
+
+.div-logo {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.div-logo:hover {
+    background-color: rgba(246, 94, 40, 0.1);
+}
+
+.div-tab:hover {
+    background-color: var(--light-bg);
+}
+
+.div-logout:hover {
+    background-color: var(--light-bg);
+}
+
+.active {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.active:hover {
+    background-color: var(--primary);
+    opacity: 0.9;
+}
+
+.div-main {
+    background-color: var(--background);
+}
+
+.div-search input {
+    background-color: var(--background);
+    color: var(--accent);
+    border: 1px solid var(--light-bg);
+}
+
+.div-new-course {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.div-course-action-btn {
+    background-color: var(--primary) !important;
+    color: var(--background) !important;
+    border: none;
+}
+
+.div-course-action-btn:hover {
+    background-color: var(--primary) !important;
+    opacity: 0.9;
+}
+
+.section-header span {
+    color: var(--accent);
+}
+
+.section-header>div i {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.section-header>div i:hover {
+    background-color: var(--primary);
+    opacity: 0.9;
+}
+
+.yellow-div {
+    background-color: rgba(255, 179, 77, 0.1);
+}
+
+.green-div {
+    background-color: rgba(129, 199, 132, 0.1);
+}
+
+.your-course-header .yellow-div-child {
+    background-color: #FFB74D;
+}
+
+.your-course-header .green-div-child {
+    background-color: #81C784;
+}
+
+.your-course-duration-progress-bar>div div {
+    background: var(--primary);
+}
+
+.course-continue-btn {
+    background-color: var(--primary) !important;
+    color: var(--background) !important;
+}
+
+.course-continue-btn:hover {
+    background-color: var(--primary) !important;
+    opacity: 0.9;
+}
+
+.div-your-resource {
+    background-color: var(--background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: var(--accent);
+}
+
+.your-resource-title {
+    color: var(--accent);
+}
+
+.your-resource-author {
+    color: var(--light-text);
+}
+
+.your-resource-type {
+    background-color: var(--light-bg);
+    color: var(--accent);
+}
+
+.your-resource-read-watch-btn {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.your-resource-read-watch-btn:hover {
+    background-color: var(--primary);
+    opacity: 0.9;
+}
+
+.div-new-course:hover,
+.your-course:hover,
+.div-your-resource:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+    .div-sidebar-left {
+        background-color: var(--primary);
+    }
+
+    .div-tab {
+        color: var(--background);
+    }
+
+    .div-tab:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}

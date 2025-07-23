@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="/css/profile.css">
+
+  <link rel="stylesheet" href="/css/components/sidebar.css">
+  <link rel="stylesheet" href="/css/components/topbar.css" />
+
+  <title>My Profile - Baitussalam TechPark</title>
+</head>
+
+<body>
+  <div class="main-container-div">
+    <aside class="sidebar-sidebar">
+      <div class="sidebar-logo">
+        <img class="img-default" src="/imgs/btp-logo.png" alt="Tech Park Logo">
+        <img class="img-min" src="/imgs/baitussalam-logo-min.svg" alt="Tech Park Logo">
+        <div class="sidebar-div-logout" id="logout-btn-1">
+          <i class='bxr bx-arrow-in-left-square-half'></i>
+          <span>Logout</span>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <li id="goto-dashboard">
+          <i class='bx bx-chalkboard'></i>
+          <span>Dashboard</span>
+        </li>
+        <li id="my-profile" class="sidebar-active">
+          <i class='bx bx-user'></i>
+          <span>Profile</span>
+        </li>
+        <li id="all-students">
+          <i class='bx bxs-group'></i>
+          <span>All Students</span>
+        </li>
+        <li>
+          <i class='bx bx-book-alt'></i>
+          <span>Courses</span>
+        </li>
+        <li>
+          <i class='bx bx-check-square'></i>
+          <span>Attendance</span>
+        </li>
+        <li>
+          <i class='bx bx-edit'></i>
+          <span>Exam</span>
+        </li>
+      </ul>
+      <div class="sidebar-div-logout" id="logout-btn-2">
+        <i class='bxr bx-arrow-in-left-square-half'></i>
+        <span>Logout</span>
+      </div>
+    </aside>
+
+    <main class="main-main">
+      <header class="main-header">
+        <div class="main-search">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search" id="querry-inp">
+        </div>
+        <div class="user-info-container">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User" class="user-avatar" />
+          <div class="user-info">
+            <span class="user-username">John Doe</span>
+            <span class="user-role">Admin</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="profile-card">
+        <div class="profile-header">
+          <h2>Profile</h2>
+          <div class="actions">
+            <button class="btn-secondary">Edit</button>
+            <button class="btn-primary" id="logout-btn">Logout</button>
+          </div>
+        </div>
+
+        <div class="profile-content">
+          <div class="student-photo">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Student Photo" /> <!--  -->
+            <h3>John Doe</h3>
+            <p>Student</p>
+          </div>
+
+          <div class="student-info">
+            <div class="info-section">
+              <h4>Personal Information</h4>
+              <p><strong>First Name:</strong> John</p>
+              <p><strong>Last Name:</strong> Doe</p>
+              <p><strong>Date of Birth:</strong> 15-08-2004</p>
+              <p><strong>Class:</strong> 2nd Year</p>
+              <p><strong>Roll Number:</strong> 202561</p>
+              <p><strong>Religion:</strong> Islam</p>
+            </div>
+
+            <div class="info-section">
+              <h4>Family Information</h4>
+              <p><strong>Father Name:</strong> Mr. Ahmed Doe</p>
+              <p><strong>F. Occupation:</strong> Software Engineer</p>
+              <p><strong>Mother Name:</strong> Mrs. Fatima Doe</p>
+              <p><strong>M. Occupation:</strong> Homemaker</p>
+            </div>
+
+            <div class="info-section">
+              <h4>Contact Information</h4>
+              <p><strong>Primary Phone:</strong> +92 300 1234567</p>
+              <p><strong>Secondary Phone:</strong> +92 322 7654321</p>
+              <p><strong>Primary Email:</strong> johndoe@email.com</p>
+              <p><strong>Secondary Email:</strong> john.alt@email.com</p>
+              <p><strong>Address:</strong> Block 5, Clifton, Karachi</p>
+              <p><strong>Zip Code:</strong> 75600</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/auth.js"></script>
+</body>
+
+</html>
