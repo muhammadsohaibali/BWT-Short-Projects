@@ -71,6 +71,5 @@ app.get('/forgot-password', (req, res) => {
 // =======================================================================================
 
 app.listen(PORT, () => {
-  console.log(''); // FOR SPACING IN CONSOLE
   console.log(`Server running at http://localhost:${PORT}`);
 });
