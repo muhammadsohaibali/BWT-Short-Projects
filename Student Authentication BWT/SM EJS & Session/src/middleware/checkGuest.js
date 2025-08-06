@@ -1,37 +1,29 @@
 const { getDB } = require('../config/dbConfig')
-const config = require('../config/appConfig')
-const jwt = require('jsonwebtoken')
+const { sessions } = require('../controller/auth.controller')
 
 function checkGuest(req, res, next) {
-    const token = req.cookies?.token;
-    if (!token) {
-        if (!next) return true
-        return next()
-    };
-
-    let decodedToken;
-    try {
-        decodedToken = jwt.verify(token, config.JWT_SECRET)
-    } catch (error) {
+    const sessionId = req.cookies?.sessionId
+    if (!sessionId) {
         if (!next) return true
         return next()
     }
 
-    if (!decodedToken || !decodedToken.username) {
+    const session = sessions.find(s => s.sessionId === sessionId)
+    if (!session) {
         if (!next) return true
         return next()
     }
 
-    const users = getDB();
-    const user = users.find(u => u.username === decodedToken.username && !u.deleted);
+    const users = getDB()
+    const user = users.find(u => u.id === session.userId && !u.deleted)
 
     if (user) {
-        if (!next) return false;
-        return res.status(403).json({ success: false, error: 'Already logged in' });
+        if (!next) return false
+        return res.status(403).json({ success: false, error: 'Already logged in' })
     }
 
-    if (!next) return true;
-    return next();
+    if (!next) return true
+    return next()
 }
 
 module.exports = checkGuest

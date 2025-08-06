@@ -1,26 +1,25 @@
-const config = require('../config/appConfig')
 const { getDB } = require('../config/dbConfig')
-const jwt = require('jsonwebtoken')
+const crypto = require('crypto')
 
-async function login(req, res) {
+exports.sessions = []
+
+exports.login = async (req, res) => {
     try {
         const users = getDB()
-        const token = req.cookies?.token
+        const sessionId = req.cookies?.sessionId
 
-        if (token) {
-            try {
-                const decodedToken = jwt.verify(token, config.JWT_SECRET)
-                const user = users.find(u => u.username === decodedToken.username && !u.deleted)
-                if (user) {
-                    res.cookie('error-cookie', 'Already Logged In')
-                    return res.redirect('/dashboard')
-                }
-            } catch (error) {
-                res.clearCookie('token')
+        if (sessionId) {
+            const existingSession = exports.sessions.find(s => s.sessionId === sessionId)
+            const user = existingSession && users.find(u => u.id === existingSession.userId && !u.deleted)
+
+            if (user) {
+                res.cookie('error-cookie', 'Already Logged In')
+                return res.redirect('/dashboard')
             }
         }
 
         const { username, password } = req.body
+
         if (!username || !password) {
             res.cookie('error-cookie', 'Username and password are required')
             return res.redirect('/login')
@@ -33,17 +32,18 @@ async function login(req, res) {
             return res.redirect('/login')
         }
 
-        const checkPassword = user.password === password
-        if (!checkPassword) {
+        if (user.password !== password) {
             res.cookie('error-cookie', 'Invalid Credentials')
             res.cookie('username-cookie', username)
             return res.redirect('/login')
         }
 
-        const newToken = jwt.sign({ username }, config.JWT_SECRET)
-        res.cookie('token', newToken, {
+        const newSessionId = crypto.randomBytes(16).toString('hex')
+        exports.sessions.push({ sessionId: newSessionId, username: user.username })
+
+        res.cookie('sessionId', newSessionId, {
             httpOnly: true,
-            maxAge: 60 * 60 * 1000 * 24 * 30
+            maxAge: 1000 * 60 * 60 * 24 * 30,
         })
 
         res.redirect('/dashboard')
@@ -54,18 +54,19 @@ async function login(req, res) {
     }
 }
 
-async function logout(req, res) {
+exports.logout = async (req, res) => {
     try {
-        const token = req.cookies?.token
-        if (!token) return res.redirect('/')
+        const sessionId = req.cookies?.sessionId
+        if (!sessionId) return res.redirect('/')
 
-        res.clearCookie('token')
+        const index = exports.sessions.findIndex(s => s.sessionId === sessionId)
+        if (index !== -1) exports.sessions.splice(index, 1)
+
+        res.clearCookie('sessionId')
         return res.redirect('/')
     } catch (error) {
         console.log(error)
-        res.cookie('error-cookie', 'Internal server error')
+        res.cookie('error-cookie', 'Internal Server Error')
         return res.redirect('/')
     }
 }
-
-module.exports = { login, logout }
