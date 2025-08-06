@@ -24,7 +24,6 @@ function checkAuth(req, res, next) {
 
     const users = getDB()
     const user = users.find(u => u.username === decodedToken.username && !u.deleted);
-
     if (!user) {
         if (!next) return false
         return res.status(404).json({ success: false, error: 'User Not Found' })

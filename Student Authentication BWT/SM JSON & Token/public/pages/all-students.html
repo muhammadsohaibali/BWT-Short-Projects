@@ -11,9 +11,8 @@
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/all-students.css" />
-
-    <link rel="stylesheet" href="/css/components/sidebar.css" />
-    <link rel="stylesheet" href="/css/components/topbar.css" />
+    <link rel="stylesheet" href="/css/layout/sidebar.css" />
+    <link rel="stylesheet" href="/css/layout/topbar.css" />
 
     <title>All Students - BaitusSalam TeckPark</title>
 </head>
@@ -24,7 +23,7 @@
             <div class="sidebar-logo">
                 <img class="img-default" src="/imgs/btp-logo.png" alt="Tech Park Logo">
                 <img class="img-min" src="/imgs/baitussalam-logo-min.svg" alt="Tech Park Logo">
-                <div class="sidebar-div-logout" id="logout-btn-1">
+                <div class="sidebar-div-logout logout-class">
                     <i class='bxr bx-arrow-in-left-square-half'></i>
                     <span>Logout</span>
                 </div>
@@ -61,7 +60,7 @@
                     <span>Exam</span>
                 </li>
             </ul>
-            <div class="sidebar-div-logout" id="logout-btn-2">
+            <div class="sidebar-div-logout logout-class">
                 <i class='bxr bx-arrow-in-left-square-half'></i>
                 <span>Logout</span>
             </div>
@@ -77,7 +76,7 @@
                     <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User" class="user-avatar" />
                     <div class="user-info">
                         <span class="user-username">
-                            <%= data.userData?.fullname %>
+                            John Doe
                         </span>
                         <span class="user-role">Admin</span>
                     </div>
@@ -104,37 +103,15 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <% data.allStudents.map(std=> { %>
-                            <tr>
-                                <td><input type="checkbox" /></td>
-                                <td><%= std.fullname %></td>
-                                <td><%= std.rollNo %></td>
-                                <td><%= std.address %></td>
-                                <td><%= std.dob %></td>
-                                <td><%= std.phone %></td>
-                                <td class="action-buttons">
-                                    <button class="btn update-btn">
-                                        <i class='bx bx-edit'></i> Update
-                                    </button>
-                                    <button class="btn delete-btn">
-                                        <i class='bx bx-trash'></i> Delete
-                                    </button>
-                                </td>
-                            </tr>
-                            <% }) %>
+                    <tbody id="students-list">
+                        <!-- All Students Will Be Rendered Here -->
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
-    <form id="logout-form" action="/api/auth/logout" method="POST" style="display: none;"></form>
-    <script>
-        const logoutBtns = ['logout-btn-1', 'logout-btn-2'].map(btn => document.getElementById(btn))
-        logoutBtns.forEach(btn => {
-            btn.addEventListener('click', () => document.getElementById('logout-form').submit())
-        })
-    </script>
+
+    <script src="/js/all-students.js"></script>
 </body>
 
 </html>

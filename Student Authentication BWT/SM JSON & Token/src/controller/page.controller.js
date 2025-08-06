@@ -1,46 +1,41 @@
 const checkAuth = require('../middleware/checkAuth');
-const { getDB } = require('../config/dbConfig');
+const path = require('path');
+
+const BASE_PATH = path.join(__dirname, '../../public/pages');
 
 exports.home = (req, res) => {
     const isAuth = checkAuth(req, res);
-    return isAuth ? res.redirect('/dashboard') : res.redirect('/login');
+    return isAuth
+        ? res.redirect('/dashboard')
+        : res.redirect('/login');
 };
 
 exports.dashboard = (req, res) => {
     const isAuth = checkAuth(req, res);
     if (!isAuth) return res.redirect('/login');
-    res.render('dashboard', { data: { userData: req.user } });
+    return res.sendFile(path.join(BASE_PATH, 'dashboard.html'));
 };
 
 exports.allStudents = (req, res) => {
     const isAuth = checkAuth(req, res);
     if (!isAuth) return res.redirect('/login');
-
-    const allStudents = getDB(); // should be async if needed
-    res.render('all-students', { data: { userData: req.user, allStudents } });
+    return res.sendFile(path.join(BASE_PATH, 'all-students.html'));
 };
 
 exports.profile = (req, res) => {
     const isAuth = checkAuth(req, res);
     if (!isAuth) return res.redirect('/login');
-    res.render('profile', { data: { userData: req.user } });
+    return res.sendFile(path.join(BASE_PATH, 'profile.html'));
 };
 
 exports.login = (req, res) => {
     const isAuth = checkAuth(req, res);
     if (isAuth) return res.redirect('/dashboard');
-
-    const error = req.cookies?.['error-cookie'] || null;
-    res.clearCookie('error-cookie');
-
-    const username = req.cookies?.['username-cookie'] || null;
-    res.clearCookie('username-cookie');
-
-    res.render('login', { data: { error, username } });
+    return res.sendFile(path.join(BASE_PATH, 'login.html'));
 };
 
 exports.forgotPassword = (req, res) => {
     const isAuth = checkAuth(req, res);
     if (isAuth) return res.redirect('/dashboard');
-    res.render('forgot-password');
+    return res.sendFile(path.join(BASE_PATH, 'forgot-password.html'));
 };

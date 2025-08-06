@@ -1,19 +1,22 @@
 {
-  "name": "student-mangement",
+  "name": "student-management-json-and-token",
   "version": "1.0.0",
+  "description": "A basic student management system using Express.js",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
   "type": "commonjs",
-  "license": "ISC",
-  "description": "",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Muhammad Sohaib Ali",
+  "license": "UNLICENSED",
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }

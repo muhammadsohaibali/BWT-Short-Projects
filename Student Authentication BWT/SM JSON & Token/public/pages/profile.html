@@ -12,8 +12,8 @@
 
   <link rel="stylesheet" href="/css/profile.css">
 
-  <link rel="stylesheet" href="/css/components/sidebar.css">
-  <link rel="stylesheet" href="/css/components/topbar.css" />
+  <link rel="stylesheet" href="/css/layout/sidebar.css">
+  <link rel="stylesheet" href="/css/layout/topbar.css" />
 
   <title>My Profile - Baitussalam TechPark</title>
 </head>
@@ -24,7 +24,7 @@
       <div class="sidebar-logo">
         <img class="img-default" src="/imgs/btp-logo.png" alt="Tech Park Logo">
         <img class="img-min" src="/imgs/baitussalam-logo-min.svg" alt="Tech Park Logo">
-        <div class="sidebar-div-logout" id="logout-btn-1">
+        <div class="sidebar-div-logout logout-class">
           <i class='bxr bx-arrow-in-left-square-half'></i>
           <span>Logout</span>
         </div>
@@ -61,7 +61,7 @@
           <span>Exam</span>
         </li>
       </ul>
-      <div class="sidebar-div-logout" id="logout-btn-2">
+      <div class="sidebar-div-logout logout-class">
         <i class='bxr bx-arrow-in-left-square-half'></i>
         <span>Logout</span>
       </div>
@@ -77,7 +77,7 @@
           <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User" class="user-avatar" />
           <div class="user-info">
             <span class="user-username">
-              <%= data.userData?.fullname %>
+              John Doe
             </span>
             <span class="user-role">Admin</span>
           </div>
@@ -89,7 +89,7 @@
           <h2>Profile</h2>
           <div class="actions">
             <button class="btn-secondary">Edit</button>
-            <button class="btn-primary" id="logout-btn">Logout</button>
+            <button class="btn-primary logout-class">Logout</button>
           </div>
         </div>
 
@@ -133,13 +133,8 @@
       </section>
     </main>
   </div>
-  <form id="logout-form" action="/api/auth/logout" method="POST" style="display: none;"></form>
-  <script>
-    const logoutBtns = ['logout-btn-1', 'logout-btn-2'].map(btn => document.getElementById(btn))
-    logoutBtns.forEach(btn => {
-      btn.addEventListener('click', () => document.getElementById('logout-form').submit())
-    })
-  </script>
+
+  <script src="/js/profile.js"></script>
 </body>
 
 </html>
